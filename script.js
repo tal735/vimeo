@@ -24,17 +24,20 @@ for (i=0; i<iframes.length; i++) {
     var src_attr = iframe.getAttribute('src');
     //check if 'src' is of form '...player.vimeo.com/...'
     if (regex.test(src_attr)) {
-        //check if 'api=1' exists in 'src'
-        var regex2 = /(.)*api=1(.)*$/i;
-        if (!regex2.test(src_attr)) {
-            //if not, add it
-            if (src_attr.indexOf('?') == -1) {
-                src_attr = src_attr + '?api=1';
+
+        //check if 'api=1' exists in 'src'              /**********************************/
+                                                        /*                                */
+        var regex2 = /(.)*api=1(.)*$/i;                 /*     Adding events works        */
+        if (!regex2.test(src_attr)) {                   /*     also without modifying     */
+            //if not, add it                            /*     src to &/?api=1            */
+            if (src_attr.indexOf('?') == -1) {          /*                                */
+                src_attr = src_attr + '?api=1';         /**********************************/
             } else {
                 src_attr = src_attr + '&api=1';
             }
             iframe.setAttribute('src', src_attr);
         }
+
         //save only vimeo iframes
         vimeo_iframes.push(iframe);
     }
