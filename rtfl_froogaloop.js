@@ -126,7 +126,7 @@ var Froogaloop = (function(){
         target.contentWindow.postMessage(data, playerOrigin);
     }
 
-
+    //not in use
     function onMessageReceived2(event) {
         var data, method;
 
