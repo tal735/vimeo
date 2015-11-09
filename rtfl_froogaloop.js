@@ -174,7 +174,7 @@ var Froogaloop = (function(){
             return false;
         }
 
-        console.log('RTFLonMessageReceived');
+        //console.log('RTFLonMessageReceived');
 
         if (playerOrigin === '*') {
             playerOrigin = event.origin;
